@@ -3,10 +3,12 @@ pipeline{
     stages{
         stage('Setup Pyhton Virtual ENV')
         {
-            sh '''
-            chmod +x envsetup.sh
-            ./envsetup.sh
-            '''
+            steps{
+                sh '''
+                chmod +x envsetup.sh
+                ./envsetup.sh
+                '''
+            }
         }
         stage('Gunicorn Setup')
         {
