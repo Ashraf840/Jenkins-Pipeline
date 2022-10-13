@@ -8,7 +8,7 @@ else
 fi
 
 echo $PWD
-source /env/bin/activate
+source /var/lib/jenkins/workspace/Django CI-CD/env/bin/activate
 
 pip3 install -r requirements.txt
 
