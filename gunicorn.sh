@@ -17,6 +17,7 @@ echo "Present Directory: $PWD"
 sudo cp -rf gunicorn.socket /etc/systemd/system/
 sudo cp -rf gunicorn.service /etc/systemd/system/
 
+echo "Successfully copied the 'gunicorn.socket' & 'gunicorn.service' files into '/etc/systemd/system/' dir"
 echo "User: $USER"
 echo "Current Directory: $PWD"
 
