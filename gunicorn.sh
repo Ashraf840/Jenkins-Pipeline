@@ -25,7 +25,7 @@ sudo systemctl daemon-reload
 sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
 
-echo "Gunicorn has been started!"
+echo "Gunicorn is about to be started!"
 
 sudo systemctl status gunicorn
 sudo systemctl restart gunicorn
