@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "running gunicorn.sh file"
+echo $PWD
+echo ls
 source /env/bin/activate
 
 # Doesn't require to get inside the "app" folder, since the current dir is holding the "manage.py" file.
