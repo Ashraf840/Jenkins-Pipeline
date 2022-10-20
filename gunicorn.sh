@@ -12,8 +12,7 @@ python3 manage.py migrate
 
 echo "Django migrations have been done by gunicorn.sh!"
 
-cd ../
-echo $PWD
+echo "Present Directory: $PWD"
 
 sudo cp -rf gunicorn.socket /etc/systemd/system/
 sudo cp -rf gunicorn.service /etc/systemd/system/
