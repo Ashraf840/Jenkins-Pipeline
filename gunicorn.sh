@@ -8,7 +8,7 @@ cd /var/lib/jenkins/workspace/Django CI-CD/
 python3 manage.py makemigrations
 python3 manage.py migrate
 
-echo "Django migrations have been done!"
+echo "Django migrations have been done by gunicorn.sh!"
 
 cd ../
 
@@ -22,7 +22,7 @@ sudo systemctl daemon-reload
 sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
 
-echo "Gunicorn has been started"
+echo "Gunicorn has been started!"
 
 sudo systemctl status gunicorn
 sudo systemctl restart gunicorn

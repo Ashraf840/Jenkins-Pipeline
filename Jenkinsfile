@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('Setup Pyhton Virtual ENV')
+        stage('Setup Python Virtual ENV')
         {
             steps{
                 sh '''
