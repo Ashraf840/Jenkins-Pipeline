@@ -2,7 +2,6 @@
 
 echo "running gunicorn.sh file"
 echo $PWD
-echo ls
 source env/bin/activate
 
 # Doesn't require to get inside the "app" folder, since the current dir is holding the "manage.py" file.
@@ -14,8 +13,9 @@ python3 manage.py migrate
 echo "Django migrations have been done by gunicorn.sh!"
 
 cd ../
+echo $PWD
 
-sudo cp -rf gunicorn.scoket /etc/systemd/system/
+sudo cp -rf gunicorn.socket /etc/systemd/system/
 sudo cp -rf gunicorn.service /etc/systemd/system/
 
 echo "User: $USER"
