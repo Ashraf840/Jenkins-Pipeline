@@ -6,7 +6,7 @@ source env/bin/activate
 
 
 # shellcheck disable=SC2164
-cd /var/lib/jenkins/workspace/Django_CI-CD/
+cd /var/lib/jenkins/workspace/django_cicd/
 
 python3 manage.py makemigrations
 python3 manage.py migrate
