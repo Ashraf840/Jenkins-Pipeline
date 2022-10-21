@@ -1,11 +1,11 @@
 #!/bin/bash
 
 echo "running nginx.sh file"
-echo "$PWD"
+echo "Present Directory: $PWD"
 
 # shellcheck disable=SC2232
-sudo cd -rf app.conf /etc/nginx/sites-available/django_cicd
-chmod 777 /var/lib/jenkins/workspace/django_cicd
+sudo cp -rf app.conf /etc/nginx/sites-available/django_cicd
+chmod 710 /var/lib/jenkins/workspace/django_cicd
 
 sudo ln -s /etc/nginx/sites-available/django_cicd /etc/nginx/sites-enabled
 sudo nginx -t
