@@ -10,7 +10,7 @@ User=root
 Group=www-data
 #WorkingDirectory=/var/lib/jenkins/workspace/Django CI-CD/app
 WorkingDirectory=/var/lib/jenkins/workspace/"Django CI-CD"/app
-ExecStart=/var/lib/jenkins/workspace/Django CI-CD/env/bin/gunicorn \
+ExecStart=/var/lib/jenkins/workspace/"Django CI-CD"/env/bin/gunicorn \
           --error-logfile /var/lib/jenkins/workspace/"Django CI-CD"/error.log \
           --workers 3 \
           --capture-output --log-level debug \
