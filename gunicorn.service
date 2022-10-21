@@ -1,24 +1,4 @@
-# Code-block Ref: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-22-04
-# Code-block template: /etc/systemd/system/gunicorn.service
-
 #!/bin/sh
-
-#[Unit]
-#Description=gunicorn daemon
-#Requires=gunicorn.socket
-#After=network.target
-#
-#[Service]
-#User=root
-#Group=nginx
-#WorkingDirectory=/var/lib/jenkins/workspace/Django\ CI-CD/app
-#ExecStart=/var/lib/jenkins/workspace/Django\ CI-CD/env/bin/gunicorn --workers 3 --bind unix:/run/gunicorn.sock app.wsgi:application
-#
-#[Install]
-#WantedBy=multi-user.target
-
-
-
 [Unit]
 Description=gunicorn daemon
 Requires=gunicorn.socket
@@ -27,9 +7,8 @@ After=network.target
 [Service]
 User=root
 Group=www-data
-#WorkingDirectory=/var/lib/jenkins/workspace/Django\ CI-CD/app
-WorkingDirectory=/var/lib/jenkins/workspace/Django\ CI-CD/app
-ExecStart=/var/lib/jenkins/workspace/Django\ CI-CD/env/bin/gunicorn --error-logfile /var/lib/jenkins/workspace/Django\ CI-CD/error.log --workers 3 --capture-output --log-level debug --bind unix:/run/gunicorn.sock app.wsgi:application
+WorkingDirectory=/var/lib/jenkins/workspace/"Django CI-CD"/app
+ExecStart=/var/lib/jenkins/workspace/"Django CI-CD"/env/bin/gunicorn --error-logfile /var/lib/jenkins/workspace/"Django CI-CD"/error.log --workers 3 --capture-output --log-level debug --bind unix:/run/gunicorn.sock app.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
