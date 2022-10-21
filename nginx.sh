@@ -4,9 +4,10 @@ echo "running nginx.sh file"
 echo "$PWD"
 
 # shellcheck disable=SC2232
-sudo cd -rf app.conf /etc/nginx/conf.d
+sudo cd -rf app.conf /etc/nginx/sites-available/django_cicd
 chmod 710 /var/lib/jenkins/workspace/django_cicd
 
+sudo ln -s /etc/nginx/sites-available/django_cicd /etc/nginx/sites-enabled
 sudo nginx -t
 
 sudo systemctl start nginx
