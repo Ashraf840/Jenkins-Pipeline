@@ -4,7 +4,6 @@ echo "running gunicorn.sh file"
 echo "$PWD"
 source env/bin/activate
 
-
 # shellcheck disable=SC2164
 cd /var/lib/jenkins/workspace/django_cicd/
 
