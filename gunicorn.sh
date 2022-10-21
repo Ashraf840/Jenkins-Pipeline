@@ -1,11 +1,12 @@
 #!/bin/bash
 
 echo "running gunicorn.sh file"
-echo $PWD
+echo "$PWD"
 source env/bin/activate
 
-# Doesn't require to get inside the "app" folder, since the current dir is holding the "manage.py" file.
-cd /var/lib/jenkins/workspace/"Django CI-CD"/
+
+# shellcheck disable=SC2164
+cd /var/lib/jenkins/workspace/Django_CI-CD/
 
 python3 manage.py makemigrations
 python3 manage.py migrate
