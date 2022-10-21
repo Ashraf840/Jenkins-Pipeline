@@ -12,6 +12,6 @@ sudo nginx -t
 sudo systemctl start nginx
 sudo systemctl enable nginx
 
-echo "Nginx is be started!"
+echo "Nginx is started!"
 
-sudo systemctl status gunicorn
+sudo systemctl status nginx
