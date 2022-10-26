@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-o)!b$(y043yi52g1grgm)6@@1)_jh^n$qb8n-o9hkj2qxdjg*4
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'www.teachatty.xyz', 'app1.teachatty.xyz', '.teachatty.xyz',
+    'app1.teachatty.xyz',
     '3.109.85.86',
     '127.0.0.1',
 ]
