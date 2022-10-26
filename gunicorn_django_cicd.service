@@ -1,6 +1,6 @@
 [Unit]
 Description=gunicorn daemon
-Requires=gunicorn.socket
+Requires=gunicorn_django_cicd.socket
 After=network.target
 
 [Service]
@@ -11,7 +11,7 @@ ExecStart=/var/lib/jenkins/workspace/django_cicd/env/bin/gunicorn \
         --error-logfile /var/lib/jenkins/workspace/django_cicd/error.log \
         --workers 3 \
         --capture-output --log-level debug \
-        --bind unix:/run/gunicorn.sock \
+        --bind unix:/run/gunicorn_django_cicd.sock \
         app.wsgi:application
 
 [Install]

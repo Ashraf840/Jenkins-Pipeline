@@ -1,0 +1,8 @@
+AWS EC2 + Jenkins + GitHub + Nginx + uWSGI + Gunicorn + Django Pipeline
+-----------------------------------------------------------------------
+
+Stages:
+- Setup Python virtual environment.
+- Setup Gunicorn (Use to run as Django server).
+- [not using this] Setup uWSGI server (Use to point to multiple Django servers).
+- Setup Nginx (Use to )
