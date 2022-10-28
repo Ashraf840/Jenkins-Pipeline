@@ -19,5 +19,14 @@ pipeline{
                 '''
             }
         }
+        stage('Supervisor Setup')
+        {
+            steps{
+                sh '''
+                chmod +x supervisor.sh
+                ./gunicorn.sh
+                '''
+            }
+        }
     }
 }
