@@ -24,7 +24,7 @@ pipeline{
             steps{
                 sh '''
                 chmod +x supervisor.sh
-                ./gunicorn.sh
+                ./supervisor.sh
                 '''
             }
         }
