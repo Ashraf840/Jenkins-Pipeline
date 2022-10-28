@@ -20,5 +20,5 @@ else
 fi
 
 
-sudo supervisorctl start multi_dj_app1
-sudo supervisorctl status multi_dj_app1
+sudo supervisorctl start multi_dj_app1.supervisor
+sudo supervisorctl status multi_dj_app1.supervisor
