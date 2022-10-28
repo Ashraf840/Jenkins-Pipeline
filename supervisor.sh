@@ -10,5 +10,9 @@ then
     echo "'gunicorn_supervisor.log' file exist!"
 else
     touch logs/gunicorn_supervisor.log
+    echo "Created the 'gunicorn_supervisor.log' file!"
 fi
+
+
+
 
