@@ -4,7 +4,7 @@ echo "running gunicorn.sh file (App1)"
 
 DJANGODIR=/var/lib/jenkins/workspace/multi_app_deploy_1
 
-echo "$PWD"
+echo "Present Directory: $PWD"
 source env/bin/activate
 
 # shellcheck disable=SC2164
