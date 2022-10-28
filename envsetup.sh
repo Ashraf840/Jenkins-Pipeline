@@ -22,6 +22,6 @@ fi
 
 
 sudo chmod -R 777 logs
-echo "Env setup finished"
+echo "Env setup finished!"
 
 
