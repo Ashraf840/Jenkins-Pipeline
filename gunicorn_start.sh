@@ -21,8 +21,9 @@ source env/bin/activate
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
-# Create the run directory if it doesn't exist
+# Create the 'run' directory if it doesn't exist, '-d' represents directory
 RUNDIR=$(dirname $SOCKFILE)
+ehco "Gunicorn socket file run path: $RUNDIR"
 test -d $RUNDIR || mkdir -p $RUNDIR
 
 # Monetize multiple Gunicorn-powered applications running on the same server
@@ -31,6 +32,8 @@ pip install setproctitle
 
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
+# Rather for putting the 'gunicorn.socket' & 'gunicorn.service' files into systemd/system folder,
+# instead of running each dj-apps gunicorn separately.
 exec $DJANGODIR/env/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --error-logfile $DJANGODIR/error.log \
   --name $NAME \
