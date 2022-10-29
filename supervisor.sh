@@ -17,6 +17,8 @@ else
     echo "Created the 'gunicorn_supervisor.log' file!"
 fi
 
+sudo apt install supervisor
+
 # Ask supervisor to reread configuration files and update (start newly registered app)
 sudo supervisorctl reread
 sudo supervisorctl update
