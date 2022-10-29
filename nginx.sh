@@ -3,16 +3,12 @@
 echo "running nginx.sh file"
 echo "Present Directory: $PWD"
 
-# shellcheck disable=SC2232
-sudo cp -rf django_cicd.conf /etc/nginx/sites-available/django_cicd.conf
-chmod 710 /var/lib/jenkins/workspace/django_cicd
+# Check if supervisor.log exist, otherwise create the file. This file is used inside the 'multi_apps_1.supervisor.conf' file
+if [ -e logs/nginx_access.log ] && [ -e logs/nginx_error.log ]
+then
+    echo "'nginx_access.log' & 'nginx_error.log' files exist!"
+else
+    touch logs/nginx_access.log logs/nginx_error.log
+    echo "Created the 'nginx_access.log' & 'nginx_error.log' file!"
+fi
 
-sudo ln -s /etc/nginx/sites-available/django_cicd.conf /etc/nginx/sites-enabled
-sudo nginx -t
-
-sudo systemctl start nginx
-sudo systemctl enable nginx
-
-echo "Nginx is started!"
-
-sudo systemctl status nginx
