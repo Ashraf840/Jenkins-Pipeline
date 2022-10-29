@@ -6,7 +6,7 @@ echo "User: $USER"
 DJANGODIR=/var/lib/jenkins/workspace/multi_app_deploy_1
 
 echo "Present Directory: $PWD"
-source env/bin/activate
+source /env/bin/activate
 
 # shellcheck disable=SC2164
 cd $DJANGODIR
