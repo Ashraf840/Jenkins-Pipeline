@@ -12,6 +12,10 @@ else
     echo "Created the 'nginx_access.log' & 'nginx_error.log' file!"
 fi
 
+# shellcheck disable=SC2232
+sudo cp -rf multi_apps_1_nginx.conf /etc/nginx/sites-available/multi_apps_1_nginx.conf
+chmod 710 /var/lib/jenkins/workspace/multi_app_deploy_1
+
 sudo nginx -t
 
 sudo systemctl start nginx
