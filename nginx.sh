@@ -6,6 +6,7 @@ echo "Present Directory: $PWD"
 NGINX_CONF_FILE=multi_apps_1_nginx.conf
 NGINX_SITES_AVAILABLE_DIR=/etc/nginx/sites-available
 NGINX_SITES_ENABLED_DIR=/etc/nginx/sites-enabled
+USER=jenkins
 
 # Check if nginx_access.log & nginx_error.log exist, otherwise create the files.
 if [ -e logs/nginx_access.log ] && [ -e logs/nginx_error.log ]
