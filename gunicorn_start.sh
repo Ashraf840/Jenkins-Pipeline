@@ -2,7 +2,7 @@
 
 echo "running gunicorn_start.sh file (App1)"
 
-NAME="dj_app1"                                                           # Name of the application
+NAME="multi_dj_app1"                                                           # Name of the application
 DJANGODIR=/var/lib/jenkins/workspace/multi_app_deploy_1                     # Django project directory
 SOCKFILE=/var/lib/jenkins/workspace/multi_app_deploy_1/run/gunicorn.sock         # we will communicate using this unix socket
 USER=jenkins                                                          # the user to run as
