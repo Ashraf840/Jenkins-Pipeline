@@ -23,5 +23,5 @@ fi
 sudo supervisorctl reread
 sudo supervisorctl update
 
-sudo supervisorctl start multi_apps_1_supervisor
-sudo supervisorctl status multi_apps_1_supervisor
+sudo supervisorctl start multi_dj_app1
+sudo supervisorctl status multi_dj_app1
