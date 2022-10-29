@@ -14,7 +14,7 @@ pipeline{
         {
             steps{
                 sh '''
-                chmod +x gunicorn.sh
+                chmod +x gunicorn_start.sh
                 ./gunicorn.sh
                 '''
             }
@@ -23,7 +23,7 @@ pipeline{
         {
             steps{
                 sh '''
-                chmod +x supervisor.sh
+                chmod +x supervisors.sh
                 ./supervisor.sh
                 '''
             }
