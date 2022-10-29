@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "running nginx.sh file"
+echo "User: $USER"
 echo "Present Directory: $PWD"
 
 NGINX_CONF_FILE=multi_apps_1_nginx.conf
@@ -24,7 +25,7 @@ chmod 777 /var/lib/jenkins/workspace/multi_app_deploy_1
 sudo ln -s $NGINX_SITES_AVAILABLE_DIR/multi_apps_1_nginx.conf $NGINX_SITES_ENABLED_DIR
 echo "Created symlink of '$NGINX_SITES_AVAILABLE_DIR/multi_apps_1_nginx.conf' inside the path: $NGINX_SITES_ENABLED_DIR"
 
-chmod -R 777 /var/lib/jenkins/workspace/multi_app_deploy_1/run/gunicorn.sock
+chmod 777 /var/lib/jenkins/workspace/multi_app_deploy_1/run/gunicorn.sock
 
 sudo nginx -t
 

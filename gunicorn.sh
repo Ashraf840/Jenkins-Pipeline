@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "running gunicorn.sh file (App1)"
+echo "User: $USER"
 
 DJANGODIR=/var/lib/jenkins/workspace/multi_app_deploy_1
 
@@ -18,7 +19,7 @@ echo "Django migrations have been done while executing gunicorn.sh!"
 echo "Present Directory: $PWD"
 
 # Make the gunicorn_server.sh executable
-sudo chmod -R 777 gunicorn_start.sh
+sudo chmod 777 gunicorn_start.sh
 
 # Copy 'gunicorn_start.sh' file to the env/bin/ path of this django-project directory
 sudo cp -rf gunicorn_start.sh $DJANGODIR/env/bin/

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "running envsetup.sh file!"
+echo "User: $USER"
+
 if [ -d "env" ]
 then
   echo "Python virtual env exists"

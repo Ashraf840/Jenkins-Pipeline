@@ -16,6 +16,7 @@ echo "Starting $NAME as `whoami`"
 # Activate the virtual environment
 cd $DJANGODIR
 echo "$PWD"
+echo "User: $USER"
 source env/bin/activate
 
 # These variables will be used by the new shell, export will make the variables global

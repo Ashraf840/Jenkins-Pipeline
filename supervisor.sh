@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "running supervisor.sh file (App1)"
-
+echo "User: $USER"
 echo "Present Directory: $PWD"
 
 # Copy 'multi_apps_1_supervisor.conf' file into '/etc/supervisor/conf.d/' dir, thus supervisor can run the
