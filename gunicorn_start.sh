@@ -34,12 +34,12 @@ pip install setproctitle
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
 # Rather for putting the 'gunicorn.socket' & 'gunicorn.service' files into systemd/system folder,
 # instead of running each dj-apps gunicorn separately.
-exec $DJANGODIR/env/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+exec $DJANGODIR/env/bin/gunicorn \
   --error-logfile $DJANGODIR/error.log \
   --name $NAME \
   --workers $NUM_WORKERS \
   --capture-output --log-level debug \
   --user=$USER \
   --bind=unix:$SOCKFILE \
-  --log-file=-
+  ${DJANGO_WSGI_MODULE}:application
 
