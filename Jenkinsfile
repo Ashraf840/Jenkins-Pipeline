@@ -23,8 +23,8 @@ pipeline{
         {
             steps{
                 sh '''
-                chmod +x supervisorA.sh
-                ./supervisorA.sh
+                chmod +x supervisor.sh
+                ./supervisor.sh
                 '''
             }
         }
