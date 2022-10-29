@@ -4,8 +4,6 @@ echo "running supervisor.sh file (App1)"
 
 echo "Present Directory: $PWD"
 
-sudo apt install supervisor
-
 # Copy 'multi_apps_1_supervisor.conf' file into '/etc/supervisor/conf.d/' dir, thus supervisor can run the
 # shell-script to start this django-app's gunicorn particularly.
 sudo cp -rf multi_apps_1_supervisor.conf /etc/supervisor/conf.d/multi_apps_1_supervisor.conf
