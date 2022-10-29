@@ -16,6 +16,7 @@ echo "Starting $NAME as `whoami`"
 # Activate the virtual environment
 cd $DJANGODIR
 echo "$PWD"
+echo "User: $USER"
 source env/bin/activate
 
 # These variables will be used by the new shell, export will make the variables global
@@ -24,7 +25,6 @@ export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
 # Create the 'run' directory if it doesn't exist, '-d' represents directory
 RUNDIR=$(dirname $SOCKFILE)
-ehco "Gunicorn socket file run path: $RUNDIR"
 test -d $RUNDIR || mkdir -p $RUNDIR
 
 # Monetize multiple Gunicorn-powered applications running on the same server
