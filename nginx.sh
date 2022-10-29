@@ -12,3 +12,11 @@ else
     echo "Created the 'nginx_access.log' & 'nginx_error.log' file!"
 fi
 
+sudo nginx -t
+
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+echo "Nginx is started!"
+
+sudo systemctl status nginx
