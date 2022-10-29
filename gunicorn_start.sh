@@ -6,7 +6,6 @@ NAME="dj_app1"                                                           # Name 
 DJANGODIR=/var/lib/jenkins/workspace/multi_app_deploy_1                     # Django project directory
 SOCKFILE=/var/lib/jenkins/workspace/multi_app_deploy_1/run/gunicorn.sock         # we will communicate using this unix socket
 USER=jenkins                                                          # the user to run as
-GROUP=www-data
 NUM_WORKERS=3                                                         # how many worker processes should Gunicorn spawn
 DJANGO_SETTINGS_MODULE=app.settings                                   # which settings file should Django use
 DJANGO_WSGI_MODULE=app.wsgi                                           # WSGI module name
@@ -40,7 +39,7 @@ exec $DJANGODIR/env/bin/gunicorn \
   --name $NAME \
   --workers $NUM_WORKERS \
   --capture-output --log-level debug \
-  --user=$USER --group=$GROUP \
+  --user=$USER \
   --bind=unix:$SOCKFILE \
   ${DJANGO_WSGI_MODULE}:application
 
