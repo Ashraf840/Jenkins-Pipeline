@@ -11,7 +11,7 @@ else
 fi
 
 echo "Present Directory: $PWD"
-source env/bin/activate
+source $PWD/env/bin/activate
 
 pip3 install -r requirements.txt
 
