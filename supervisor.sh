@@ -19,6 +19,9 @@ else
     echo "Created the 'gunicorn_supervisor.log' file!"
 fi
 
+# Ask supervisor to reread configuration files and update (start newly registered app)
+sudo supervisorctl reread
+sudo supervisorctl update
 
 sudo supervisorctl start multi_apps_1_supervisor
 sudo supervisorctl status multi_apps_1_supervisor
