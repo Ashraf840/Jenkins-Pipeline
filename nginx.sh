@@ -25,7 +25,7 @@ chmod 710 /var/lib/jenkins/workspace/multi_app_deploy_1
 sudo ln -s $NGINX_SITES_AVAILABLE_DIR/multi_apps_1_nginx.conf $NGINX_SITES_ENABLED_DIR
 echo "Created symlink of '$NGINX_SITES_AVAILABLE_DIR/multi_apps_1_nginx.conf' inside the path: $NGINX_SITES_ENABLED_DIR"
 
-# Modify the root-user ownership to jenkins ownership
+# Modify the ownership from root-user to jenkins
 sudo chown -R jenkins /var/lib/jenkins/workspace/multi_app_deploy_1/run/
 
 sudo nginx -t
