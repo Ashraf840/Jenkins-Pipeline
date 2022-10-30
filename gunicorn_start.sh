@@ -5,7 +5,7 @@ echo "running gunicorn_start.sh file (App1)"
 NAME="dj_app1"                                                           # Name of the application
 DJANGODIR=/var/lib/jenkins/workspace/multi_app_deploy_1                     # Django project directory
 SOCKFILE=/var/lib/jenkins/workspace/multi_app_deploy_1/run/gunicorn.sock         # we will communicate using this unix socket
-USER=root                                                          # the user to run as
+USER=root                                                          # the user to run as; root user can executes the file
 #USER=jenkins                                                          # the user to run as
 #USER=supervisor                                                          # the user to run as
 NUM_WORKERS=3                                                         # how many worker processes should Gunicorn spawn
@@ -26,7 +26,7 @@ export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 # Create the 'run' directory if it doesn't exist, '-d' represents directory
 #RUNDIR=$(dirname $SOCKFILE)
 #test -d $RUNDIR || mkdir -p $RUNDIR
-#ehco "Gunicorn socket file run path: $RUNDIR"
+echo "Gunicorn socket file run path: $RUNDIR"
 
 if [ -d $DJANGODIR/run ]
 then
