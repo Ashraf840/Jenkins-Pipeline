@@ -8,6 +8,16 @@ echo "Present Dir: $PWD"
 source env/bin/activate
 pip3 install uwsgi
 
+# Check if '/var/lib/jenkins/workspace/multi_app_deploy_2/logs/app1_uwsgi.log' file exist, otherwise create the file
+if [ -e /var/lib/jenkins/workspace/multi_app_deploy_2/logs/app1_uwsgi.log ]
+then
+    echo "app1_uwsgi.log file exists"
+else
+    echo "app1_uwsgi.log file doesn't exists"
+    touch logs/app1_uwsgi.log
+    echo "Created the app1_uwsgi.log file into path: $PWD/app1_uwsgi.log"
+fi
+
 # Check if the 'vassals' dir exists, otherwise create the dir
 if [ -d /etc/uwsgi/vassals ]
 then
@@ -33,18 +43,18 @@ then
     echo "emperor.uwsgi.service file exists"
 else
     echo "emperor.uwsgi.service file doesn't exists"
-    sudo cp -rf emperor.uwsgi.service /etc/systemd/system/emperor.uwsgi.service
+    # sudo cp -rf emperor.uwsgi.service /etc/systemd/system/emperor.uwsgi.service
     echo "Copied emperor.uwsgi.service file into path: /etc/systemd/system/emperor.uwsgi.service"
 fi
 
 
 # Check if the '/etc/uwsgi/app1.ini' file exists, otherwise create the file
-if [ -e /etc/uwsgi/app1.ini ]
+if [ -e /etc/uwsgi/vassals/app1.ini ]
 then
     echo "app1.ini file exists"
 else
     echo "app1.ini file doesn't exists"
-    echo "Copied app1.ini file into path: /etc/uwsgi/app1.ini"
+    echo "Copied app1.ini file into path: /etc/uwsgi/vassals/app1.ini"
 fi
 
 sudo systemctl status emperor.uwsgi.service
