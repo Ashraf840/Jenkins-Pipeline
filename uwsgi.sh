@@ -58,5 +58,7 @@ else
     echo "Copied app1.ini file into path: /etc/uwsgi/vassals/app1.ini"
 fi
 
+sudo systemctl daemon-reload
+sudo systemctl restart emperor.uwsgi.service
 sudo systemctl status emperor.uwsgi.service
 
