@@ -14,7 +14,7 @@ then
     echo "vassals dir exists"
 else
     echo "vassals dir doesn't exists"
-    mkdir /etc/uwsgi/vassals
+    sudo mkdir /etc/uwsgi/vassals
 fi
 
 sudo systemctl status emperor.uwsgi.service
