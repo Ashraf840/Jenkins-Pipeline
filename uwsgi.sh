@@ -58,7 +58,7 @@ then
 else
     echo "app1.ini file doesn't exists"
     sudo cp -rf app1.ini /etc/uwsgi/vassals/app1.ini
-    echo "Copied app1.ini file into path: /etc/uwsgi/vassals/app1.ini"
+    echo "Copied app1.ini file to path: /etc/uwsgi/vassals/app1.ini"
 fi
 sudo chown -R jenkins /etc/uwsgi/vassals/app1.ini
 
