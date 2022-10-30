@@ -25,6 +25,7 @@ then
 else
     echo "vassals dir doesn't exists"
     sudo mkdir /etc/uwsgi/vassals
+    echo "Created '/etc/uwsgi/vassals' dir!"
 fi
 sudo chown -R jenkins /etc/uwsgi/vassals
 
