@@ -23,6 +23,7 @@ then
     echo "emperor.ini dir exists"
 else
     echo "emperor.ini dir doesn't exists"
+    sudo cp -rf emperor.ini /etc/uwsgi/emperor.ini
 fi
 
 sudo systemctl status emperor.uwsgi.service
