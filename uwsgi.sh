@@ -44,7 +44,7 @@ then
 else
     echo "emperor.uwsgi.service file doesn't exists"
     sudo cp -rf emperor.uwsgi.service /etc/systemd/system/emperor.uwsgi.service
-    echo "Copied emperor.uwsgi.service file into path: /etc/systemd/system/emperor.uwsgi.service"
+    echo "Copied emperor.uwsgi.service file to path: /etc/systemd/system/emperor.uwsgi.service"
 fi
 
 
