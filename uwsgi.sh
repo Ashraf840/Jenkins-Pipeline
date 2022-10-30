@@ -17,13 +17,23 @@ else
     sudo mkdir /etc/uwsgi/vassals
 fi
 
-# Check if the '/etc/uwsgi/emperor.ini' file exists, otherwise create the dir
+# Check if the '/etc/uwsgi/emperor.ini' file exists, otherwise create the file
 if [ -e /etc/uwsgi/emperor.ini ]
 then
-    echo "emperor.ini dir exists"
+    echo "emperor.ini file exists"
 else
-    echo "emperor.ini dir doesn't exists"
+    echo "emperor.ini file doesn't exists"
     sudo cp -rf emperor.ini /etc/uwsgi/emperor.ini
+    echo "Copied the emperor.ini file into path: /etc/uwsgi/emperor.ini"
+fi
+
+# Check if the '/etc/systemd/system/emperor.uwsgi.service' file exists, otherwise create the file
+if [ -e /etc/systemd/system/emperor.uwsgi.service ]
+then
+    echo "emperor.uwsgi.service file exists"
+else
+    echo "emperor.uwsgi.service file doesn't exists"
+    echo "Copied the emperor.ini file into path: /etc/uwsgi/emperor.ini"
 fi
 
 sudo systemctl status emperor.uwsgi.service
