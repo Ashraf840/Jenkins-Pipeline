@@ -10,12 +10,12 @@ pipeline{
                 '''
             }
         }
-        stage('Gunicorn Setup')
+        stage('uWSGI Setup')
         {
             steps{
                 sh '''
-                chmod +x gunicorn.sh
-                ./gunicorn.sh
+                chmod +x uwsgi.sh
+                ./uwsgi.sh
                 '''
             }
         }
@@ -23,8 +23,8 @@ pipeline{
         {
             steps{
                 sh '''
-                chmod +x nginx.sh
-                ./nginx.sh
+                chmod +x nginxA.sh
+                ./nginxA.sh
                 '''
             }
         }
