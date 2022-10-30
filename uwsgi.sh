@@ -25,6 +25,7 @@ then
 else
     echo "vassals dir doesn't exists"
     sudo mkdir /etc/uwsgi/vassals
+    # sudo chown -R jenkins /etc/uwsgi/vassals
 fi
 
 # Check if the '/etc/uwsgi/emperor.ini' file exists, otherwise create the file
@@ -34,6 +35,7 @@ then
 else
     echo "emperor.ini file doesn't exists"
     sudo cp -rf emperor.ini /etc/uwsgi/emperor.ini
+    # sudo chown -R jenkins /etc/uwsgi/emperor.ini
     echo "Copied the emperor.ini file into path: /etc/uwsgi/emperor.ini"
 fi
 

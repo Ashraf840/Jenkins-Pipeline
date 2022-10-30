@@ -23,8 +23,8 @@ pipeline{
         {
             steps{
                 sh '''
-                chmod +x nginx.sh
-                ./nginx.sh
+                chmod +x nginxA.sh
+                ./nginxA.sh
                 '''
             }
         }
