@@ -26,7 +26,7 @@ sudo ln -s $NGINX_SITES_AVAILABLE_DIR/multi_apps_1_nginx.conf $NGINX_SITES_ENABL
 echo "Created symlink of '$NGINX_SITES_AVAILABLE_DIR/multi_apps_1_nginx.conf' inside the path: $NGINX_SITES_ENABLED_DIR"
 
 # Modify the root-user ownership to jenkins ownership
-chown jenkins /var/lib/jenkins/workspace/multi_app_deploy_1/run/gunicorn.sock
+sudo chown jenkins /var/lib/jenkins/workspace/multi_app_deploy_1/run/gunicorn.sock
 
 sudo nginx -t
 
