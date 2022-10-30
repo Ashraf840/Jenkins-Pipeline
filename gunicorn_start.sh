@@ -22,9 +22,16 @@ export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
 # Create the 'run' directory if it doesn't exist, '-d' represents directory
-RUNDIR=$(dirname $SOCKFILE)
+#RUNDIR=$(dirname $SOCKFILE)
 ehco "Gunicorn socket file run path: $RUNDIR"
-test -d $RUNDIR || mkdir -p $RUNDIR
+#test -d $RUNDIR || mkdir -p $RUNDIR
+
+if [ -d $DJANGODIR/run ]
+then
+  echo "run folder exists"
+else
+  mkdir run
+fi
 
 # Monetize multiple Gunicorn-powered applications running on the same server
 sudo apt install python3-dev
