@@ -14,6 +14,7 @@ then
     echo "'nginx_access.log' & 'nginx_error.log' files exist!"
 else
     touch logs/nginx_access.log logs/nginx_error.log
+    sudo chmod u+x logs/nginx_access.log logs/nginx_error.log
     echo "Created the 'nginx_access.log' & 'nginx_error.log' file!"
 fi
 
