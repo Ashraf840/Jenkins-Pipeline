@@ -19,15 +19,6 @@ pipeline{
                 '''
             }
         }
-        stage('Supervisor Setup')
-        {
-            steps{
-                sh '''
-                chmod +x supervisor.sh
-                ./supervisor.sh
-                '''
-            }
-        }
         stage('NGINX Setup')
         {
             steps{
