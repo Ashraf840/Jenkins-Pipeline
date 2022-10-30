@@ -34,7 +34,17 @@ then
 else
     echo "emperor.uwsgi.service file doesn't exists"
     sudo cp -rf emperor.uwsgi.service /etc/systemd/system/emperor.uwsgi.service
-    echo "Copied the emperor.ini file into path: /etc/uwsgi/emperor.ini"
+    echo "Copied emperor.uwsgi.service file into path: /etc/systemd/system/emperor.uwsgi.service"
+fi
+
+
+# Check if the '/etc/uwsgi/app1.ini' file exists, otherwise create the file
+if [ -e /etc/uwsgi/app1.ini ]
+then
+    echo "app1.ini file exists"
+else
+    echo "app1.ini file doesn't exists"
+    echo "Copied app1.ini file into path: /etc/uwsgi/app1.ini"
 fi
 
 sudo systemctl status emperor.uwsgi.service
