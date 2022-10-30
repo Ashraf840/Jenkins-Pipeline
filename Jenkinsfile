@@ -14,8 +14,8 @@ pipeline{
         {
             steps{
                 sh '''
-                chmod +x uwsgiA.sh
-                ./uwsgiA.sh
+                chmod +x uwsgi.sh
+                ./uwsgi.sh
                 '''
             }
         }
