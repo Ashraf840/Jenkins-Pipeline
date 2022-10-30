@@ -31,7 +31,7 @@ if [ -d $DJANGODIR/run ]
 then
   echo "run folder exists"
 else
-  mkdir run
+  mkdir $DJANGODIR/run
 fi
 
 # Monetize multiple Gunicorn-powered applications running on the same server
