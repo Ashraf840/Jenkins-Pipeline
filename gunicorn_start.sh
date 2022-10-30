@@ -25,8 +25,8 @@ export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
 # Create the 'run' directory if it doesn't exist, '-d' represents directory
 #RUNDIR=$(dirname $SOCKFILE)
-ehco "Gunicorn socket file run path: $RUNDIR"
 #test -d $RUNDIR || mkdir -p $RUNDIR
+#ehco "Gunicorn socket file run path: $RUNDIR"
 
 if [ -d $DJANGODIR/run ]
 then
