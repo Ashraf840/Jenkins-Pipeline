@@ -24,8 +24,6 @@ chmod 710 /var/lib/jenkins/workspace/multi_app_deploy_1
 sudo ln -s $NGINX_SITES_AVAILABLE_DIR/multi_apps_1_nginx.conf $NGINX_SITES_ENABLED_DIR
 echo "Created symlink of '$NGINX_SITES_AVAILABLE_DIR/multi_apps_1_nginx.conf' inside the path: $NGINX_SITES_ENABLED_DIR"
 
-sudo chmod u+x gunicorn_start.sh
-
 sudo nginx -t
 
 sudo systemctl start nginx

@@ -19,7 +19,7 @@ echo "Django migrations have been done while executing gunicorn.sh!"
 echo "Present Directory: $PWD"
 
 # Make the gunicorn_server.sh executable
-chmod u+x gunicorn_start.sh
+sudo chmod u+x gunicorn_start.sh
 
 # Copy 'gunicorn_start.sh' file to the env/bin/ path of this django-project directory
 sudo cp -rf gunicorn_start.sh $DJANGODIR/env/bin/
