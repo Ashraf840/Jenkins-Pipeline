@@ -17,5 +17,13 @@ else
     sudo mkdir /etc/uwsgi/vassals
 fi
 
+# Check if the '/etc/uwsgi/emperor.ini' file exists, otherwise create the dir
+if [ -e /etc/uwsgi/emperor.ini ]
+then
+    echo "emperor.ini dir exists"
+else
+    echo "emperor.ini dir doesn't exists"
+fi
+
 sudo systemctl status emperor.uwsgi.service
 
