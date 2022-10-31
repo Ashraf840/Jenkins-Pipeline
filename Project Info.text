@@ -7,6 +7,8 @@ YT Video:  https://www.youtube.com/watch?v=Sl94H5e7MPw&t=36s
 [Pat-2] https://michal.karzynski.pl/blog/2013/10/29/serving-multiple-django-applications-with-nginx-gunicorn-supervisor/
 
 
+Jenkins Workspace: multi_app_deploy_3
+
 Automation Stages:
 - Setup Python virtual environment.
 - Setup Gunicorn (Use to run as Django server).
