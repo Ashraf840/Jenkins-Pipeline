@@ -51,6 +51,18 @@ else
 fi
 sudo chown -R jenkins /etc/systemd/system/emperor.uwsgi.service
 
+# Check if the '/etc/uwsgi/app2.ini' file exists, otherwise create the file
+if [ -e /etc/uwsgi/vassals/app2.ini ]
+then
+    echo "app2.ini file exists"
+else
+    echo "app2.ini file doesn't exists"
+    sudo cp -rf app2.ini /etc/uwsgi/vassals/app2.ini
+fi
+sudo cp -rf app2.ini /etc/uwsgi/vassals/app2.ini
+echo "Copied app2.ini file to path: /etc/uwsgi/vassals/app2.ini"
+sudo chown -R jenkins /etc/uwsgi/vassals/app2.ini
+
 sudo systemctl daemon-reload
-# sudo systemctl restart emperor.uwsgi.service
+sudo systemctl restart emperor.uwsgi.service
 sudo systemctl status emperor.uwsgi.service
