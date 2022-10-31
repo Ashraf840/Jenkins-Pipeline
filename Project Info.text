@@ -1,0 +1,14 @@
+AWS EC2 + Jenkins + GitHub + Nginx + uWSGI + Gunicorn + Django Pipeline
+-----------------------------------------------------------------------
+[ Jenkins Automation ]
+YT Video:  https://www.youtube.com/watch?v=Sl94H5e7MPw&t=36s
+[ Serve multiple gunicorn sockets using Supervisor ]
+[Pat-1] https://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/
+[Pat-2] https://michal.karzynski.pl/blog/2013/10/29/serving-multiple-django-applications-with-nginx-gunicorn-supervisor/
+
+
+Automation Stages:
+- Setup Python virtual environment.
+- Setup Gunicorn (Use to run as Django server).
+- [not using this] Setup uWSGI server (Use to point to multiple Django servers).
+- Setup Nginx (Use to )
