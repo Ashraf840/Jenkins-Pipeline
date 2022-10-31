@@ -4,7 +4,7 @@ echo "running nginx.sh file"
 echo "User: $USER"
 echo "Present Directory: $PWD"
 
-NGINX_CONF_FILE=app1_nginx.conf
+NGINX_CONF_FILE=app2_nginx.conf
 NGINX_SITES_AVAILABLE_DIR=/etc/nginx/sites-available
 NGINX_SITES_ENABLED_DIR=/etc/nginx/sites-enabled
 
@@ -17,6 +17,19 @@ else
     sudo chmod u+x logs/nginx_access.log logs/nginx_error.log
     echo "Created the 'nginx_access.log' & 'nginx_error.log' file!"
 fi
+
+# shellcheck disable=SC2232
+sudo cp -rf $NGINX_CONF_FILE $NGINX_SITES_AVAILABLE_DIR/app2_nginx.conf
+sudo chown -R jenkins $NGINX_SITES_AVAILABLE_DIR/app2_nginx.conf
+echo "Copied the '$NGINX_CONF_FILE' file in path: $NGINX_SITES_AVAILABLE_DIR"
+chmod 710 /var/lib/jenkins/workspace/multi_app_deploy_3
+
+sudo ln -s $NGINX_SITES_AVAILABLE_DIR/app2_nginx.conf $NGINX_SITES_ENABLED_DIR
+sudo chown -R jenkins $NGINX_SITES_ENABLED_DIR/app2_nginx.conf
+echo "Created symlink of '$NGINX_SITES_AVAILABLE_DIR/app2_nginx.conf' inside the path: $NGINX_SITES_ENABLED_DIR"
+
+# Modify the ownership from root-user to jenkins
+# sudo chown -R jenkins /var/lib/jenkins/workspace/multi_app_deploy_3/run/
 
 sudo nginx -t
 
