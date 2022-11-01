@@ -65,5 +65,8 @@ sudo chown -R jenkins /etc/uwsgi/vassals/app2.ini
 
 sudo systemctl daemon-reload
 sudo systemctl restart uwsgi.service
+sudo systemctl status uwsgi.service
 sudo systemctl restart emperor.uwsgi.service
 sudo systemctl status emperor.uwsgi.service
+
+echo "Uwsgi setup finished!"

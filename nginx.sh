@@ -31,11 +31,11 @@ echo "Created symlink of '$NGINX_SITES_AVAILABLE_DIR/app2_nginx.conf' inside the
 # Modify the ownership from root-user to jenkins
 # sudo chown -R jenkins /var/lib/jenkins/workspace/multi_app_deploy_3/run/
 
-sudo nginx -t
-
 sudo systemctl start nginx
 sudo systemctl enable nginx
 
 echo "Nginx is started!"
-
+sudo nginx -t
 sudo systemctl status nginx
+
+echo "Nginx setup finished!"
