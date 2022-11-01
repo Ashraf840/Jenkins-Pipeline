@@ -38,4 +38,4 @@ echo "Nginx is started!"
 sudo nginx -t
 sudo systemctl status nginx
 
-echo "Nginx setup finished!"
+echo "Nginx setup finished!!"
