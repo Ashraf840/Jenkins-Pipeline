@@ -51,7 +51,6 @@ else
 fi
 sudo chown -R jenkins /etc/systemd/system/emperor.uwsgi.service
 
-
 # Check if the '/etc/uwsgi/app1.ini' file exists, otherwise create the file
 if [ -e /etc/uwsgi/vassals/app1.ini ]
 then
@@ -65,6 +64,9 @@ echo "Copied app1.ini file to path: /etc/uwsgi/vassals/app1.ini"
 sudo chown -R jenkins /etc/uwsgi/vassals/app1.ini
 
 sudo systemctl daemon-reload
+sudo systemctl restart uwsgi.service
+sudo systemctl status uwsgi.service
 sudo systemctl restart emperor.uwsgi.service
 sudo systemctl status emperor.uwsgi.service
 
+echo "Uwsgi setup finished!"
